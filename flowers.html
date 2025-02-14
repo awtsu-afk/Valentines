@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentines❤️</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffe4e1;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #d63384;
+        }
+        .garden {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px; /* Add space between flowers */
+            margin-top: 20px;
+        }
+        .flower {
+            width: 120px;
+            height: 120px;
+            position: relative;
+            cursor: pointer;
+        }
+        .petal {
+            width: 60px;
+            height: 90px;
+            background: radial-gradient(circle, #ff007f 10%, #ff4da6 60%, #ff007f 90%);
+            position: absolute;
+            border-radius: 50% 50% 50% 50%;
+            opacity: 0.9;
+            transform-origin: center;
+            transition: transform 0.3s ease-in-out;
+        }
+        .flower:hover .petal {
+            transform: scale(1.1);
+        }
+        .flower .petal:nth-child(1) { transform: rotate(0deg) translateY(-40px); }
+        .flower .petal:nth-child(2) { transform: rotate(45deg) translateY(-40px); }
+        .flower .petal:nth-child(3) { transform: rotate(90deg) translateY(-40px); }
+        .flower .petal:nth-child(4) { transform: rotate(135deg) translateY(-40px); }
+        .flower .petal:nth-child(5) { transform: rotate(180deg) translateY(-40px); }
+        .flower .petal:nth-child(6) { transform: rotate(225deg) translateY(-40px); }
+        .flower .petal:nth-child(7) { transform: rotate(270deg) translateY(-40px); }
+        .flower .petal:nth-child(8) { transform: rotate(315deg) translateY(-40px); }
+        .center {
+            width: 55px;
+            height: 55px;
+            background: radial-gradient(circle, #ffff00, #ffcc00);
+            border-radius: 50%;
+            position: absolute;
+            top: 32px;
+            left: 32px;
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.8);
+            border: 3px solid #ff9900;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #ff1493;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click all Flower!</h1>
+    <div class="garden">
+        <div class="flower" onclick="revealMessage(0)">
+            <div class="center"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+        </div>
+        <div class="flower" onclick="revealMessage(1)">
+            <div class="center"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+        </div>
+        <div class="flower" onclick="revealMessage(2)">
+            <div class="center"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+        </div>
+    </div>
+    <div id="messageBox" class="message"></div>
+
+    <script>
+        const messages = [
+            "Bebe, I’m really sorry for my mistake. I didn’t mean to hurt you. I’ll do better. Hope you can forgive me.",
+            "Happy Valentine’s Day, Bebe! ❤️ You make every moment special, and I’m so grateful to have you in my life. You’re my happiness, my peace, and my greatest blessing. I love you more than words can say, today and always. 💕",
+            "Bebe, I just want to take a moment to remind you how much you mean to me. Every day with you is a gift, and I’m so grateful to have you by my side. Your kindness, your love, and your presence make my world brighter. No matter what, I’ll always be here for you, loving you, and cherishing every moment we share. You are my heart, my happiness, and my forever. I love you endlessly. ❤️"
+        ];
+        
+        function revealMessage(index) {
+            const messageBox = document.getElementById("messageBox");
+            messageBox.textContent = messages[index];
+            messageBox.style.display = "block";
+            messageBox.style.animation = "fadeIn 1s";
+        }
+    </script>
+</body>
+</html>
